@@ -167,7 +167,7 @@ pub trait Parser {
     fn find_functions(&mut self, pb: &ProgressBar) -> Result<Vec<Element>, Error> {
         let mut parser = TSParser::new();
         let language = self.language();
-        parser.set_language(language)?;
+        parser.set_language(&language)?;
         let files = self.files()?;
         let query = self.query();
         let mut ret: Vec<Element> = Vec::with_capacity(files.len());

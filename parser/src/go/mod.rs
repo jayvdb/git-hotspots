@@ -22,7 +22,7 @@ impl GoParser {
             .contents_utf8()
             .ok_or(Error::ParseFile("Can't parse queries".to_owned()))?;
         let language = language();
-        let query = Query::new(language, query)?;
+        let query = Query::new(&language, query)?;
 
         Ok(GoParser {
             container: c,
